@@ -14,24 +14,32 @@
     <style>
 body
 {
-background-image:url('https://www.swissbusinessacademy.com/wp-content/uploads/2019/08/732220.jpg');
+background-image:url('https://image.freepik.com/free-photo/stock-market-graph-business-forex-trading-investment-financial-stock-chart-exchange-growth-crisis-money_73523-2631.jpg');
 background-repeat: no-repeat;
   background-attachment: fixed;
   background-size:100% 100%;
 }
-.button {
-  border-radius: 4px;
-  background-color: #dcd9cd;
-  border: none;
-  color: black;
-  text-align: center;
-  font-size: 15px;
-  padding: 8px 14px;
-  width: 100px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+.myButton {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
 }
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
 </style>
     <body style="color:white">
     <br>
@@ -39,13 +47,11 @@ background-repeat: no-repeat;
     <center>
     
         <b></b><h1 style="font-family:Callibri"><font size="10">VSHARE</font></h1>
-        <h2 style="font-family:Callibri"><i>Stock Brokerage Website</i></h2> </b><br><br>
-        <a href="new account"><button class="button">Register</button></a>
+        <h2 style="font-family:Callibri"><i>Stock Market</i></h2> </b><br><br>
+        <a href="new account" class="myButton">Register</a>
         <br> <br>
-        <a href="login"><button class="button">Login</button></a>
+        <a href="login" class="myButton">Login</a>
     </center>
     <br><br><br><br><br>
-    <b><marquee style:"font-family:Callibri;font-size:+10">"KNOW WHAT YOU OWN, AND WHY YOU OWN IT." - PETER LYNCH </marquee>
-   </b>
     </body>
 </html>
