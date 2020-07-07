@@ -35,7 +35,7 @@ public class HomeController {
 	       String password = req.getParameter("password");
 	       Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
 	       Connection conn=DriverManager.getConnection(  
-	        "jdbc:mysql://localhost:3306/login","root","mathudb");
+	        "jdbc:mysql://localhost:3306/login","root","model@mysql@10");
 	       
 	       PreparedStatement pst = conn.prepareStatement("Select user,password from login.login_det");
 	       ResultSet rs = pst.executeQuery();
@@ -61,7 +61,7 @@ public class HomeController {
 	       String password = req.getParameter("password");
 	       Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
 	       Connection conn=DriverManager.getConnection(  
-	        "jdbc:mysql://localhost:3306/login","root","mathudb");      
+	        "jdbc:mysql://localhost:3306/login","root","model@mysql@10");      
 	       PreparedStatement pst = conn.prepareStatement("Select user,password from login.login_det where user=? and password=?");
 	       pst.setString(1, username);
 	       pst.setString(2, password);
