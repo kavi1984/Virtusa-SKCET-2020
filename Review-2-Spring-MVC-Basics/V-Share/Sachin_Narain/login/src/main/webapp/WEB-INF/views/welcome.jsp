@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome user</title>
+<title>Welcome user*</title>
 </head>
 <style>
 body
@@ -19,10 +19,6 @@ background-repeat: no-repeat;
 </style>
 <body style="color:black"> 
 <center>
- <h1 style="font-family:Callibri"><font size="10"> Happy Investing!</font> </h1></</center>
- <br><br><br><br><br>
- <br><br><br><br><br>
- <b><marquee style:"font-family:Callibri;font-size:+10">"THE MOST IMPORTANT QUALITY FOR AN INVESTOR IS TEMPERAMENT, NOT INTELLECT." - WARREN BUFETT </marquee>
-</b>
+ <h1 style="font-family:Callibri"><font size="10"></font> </h1></</center>
 </body>
 </html>
