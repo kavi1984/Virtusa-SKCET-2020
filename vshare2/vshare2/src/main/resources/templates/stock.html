@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Stock Market Analisys</title>
+	<link th:href="@{/css/style.css}" href="/css/style.css"  rel="stylesheet" type="text/css"  />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/selectize.js}"></script>
+	<script type="text/javascript" th:src="@{/js/lib.js}"></script>
+</head>
+<body id="body" class="fade-out">
+	<div class="page text-center">
+	  <div class="header"></div>
+	
+	  <div class="body">
+	    <h5 class="title">STOCK MARKET ANALISYS</h5>
+	    <p class="text">Select the stock in order to analize its history</p>
+
+		<div>
+			<form action="#" th:action="@{/stock}" th:object="${researchData}" method="post">
+		    	<p class="text">SYMBOL: 
+		    		<select th:field="*{{symbol}}" id="soflow">
+							<option th:each="stock : ${stocks}"
+								th:value="${stock.getSymbol()}"
+								th:text="${stock.getSymbol()}"></option>
+					</select>
+					
+<!-- 					Type:    	 -->
+<!-- 			    	<select th:field="*{{analysisType}}"> -->
+<!-- 				     	<option th:each="analysisType : ${T(com.vinibraga.stockmarket.entity.AnalysisType).values()}" -->
+<!-- 				        	th:value="${{analysisType}}" -->
+<!-- 				            th:selected="${analysisType == T(com.vinibraga.stockmarket.entity.AnalysisType)}" -->
+<!-- 				            th:text="${analysisType}"> -->
+<!-- 				        </option> -->
+<!-- 				    </select> -->
+				    
+				    
+		    		<input type="submit" value="PLOT" class="button"/>
+		    	</p>
+		    </form>    
+		</div>
+		
+		<div th:if="${stockInfo.name}" class="info-style">
+			<p th:text="${stockInfo.name}" />
+			<p th:text="'$ ' + ${stockInfo.price}"></p>	
+		</div>
+
+		<div>
+			<input type="hidden" th:value="${stockHistory}" id="stockHistory"> 
+			<input type="hidden" th:value="${stockIntraday}" id="stockIntraday"> 
+			<div id="chartdiv">		
+		</div>
+
+	  </div>
+	  
+	  
+	  <div class="footer text-muted">
+	    Crafted by Vinicius Braga
+	  </div>
+	</div>
+</div>
+
+<script>
+	setTimeout(() => {
+		document.getElementById("body").setAttribute("class", "");
+	}, 1000);
+</script>
+
+</body>
+</html>
+
+
+

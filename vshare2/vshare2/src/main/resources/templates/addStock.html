@@ -1,0 +1,55 @@
+<div class="container">
+	
+		<!-- ADD NEW STOCKS FORM -->
+	<form name="addStock" ng-controller="AddStockController as addNewStockCtrl" ng-submit="addStock.$valid && addNewStockCtrl.addStock(addNewStockCtrl)" autocomplete="off" novalidate>
+			
+			<!-- TITLE -->
+		<h1><span class="glyphicon glyphicon-plus-sign"></span> Add Stock</h1>
+			
+			<!-- LIVE PREVIEW -->
+		<table class="table table-bordered">
+	    	<thead>
+	      		<tr>
+	        		<th class="text-info"><h4>Stock Name</h4></th>
+	        		<th class="text-info"><h4>Price</h4></th>	        		
+	      		</tr>
+	    	</thead>
+	    	<tbody>
+	      		<tr>
+	        		<td height="40">{{addNewStockCtrl.name}}</td>
+	        		<td>{{addNewStockCtrl.currentPrice}}</td>
+	      		</tr>     		
+	   		</tbody>
+	  	</table>
+	  	
+	  		<!-- STOCK NAME -->		
+        <fieldset class="form-group" ng-class="{ 'has-error' : addStock.name.$invalid && !addStock.name.$pristine }">
+            <label class="control-label">Stock Name</label>
+            <input class="form-control" ng-model="addNewStockCtrl.name" ng-minlength="2" ng-maxlength="30" name="name" placeholder="Write name of the stock." required></input>
+            <p ng-show="addStock.name.$error.minlength" class="help-block">Stock Name is too short.</p>
+            <p ng-show="addStock.name.$error.maxlength" class="help-block">Stock Name is too long.</p>			
+		</fieldset>
+		
+			<!-- PRICE	 -->
+		<fieldset class="form-group" ng-class="{ 'has-error' : addStock.currentPrice.$invalid && !addStock.currentPrice.$pristine }">
+			<label class="control-label">Price</label>
+			<input class="form-control" type="number" ng-model="addNewStockCtrl.currentPrice" ng-minlength="1" ng-maxlength="10" name="currentPrice" placeholder="Write price of the stock." required></input>
+            <p ng-show="addStock.currentPrice.$error.minlength" class="help-block">Price is too short.</p>
+            <p ng-show="addStock.currentPrice.$error.maxlength" class="help-block">Price is too long.</p>		
+		</fieldset>
+		
+			
+			<!-- RETURN & SUBMIT  BUTTONS -->
+		<fieldset class="form-group">
+				<!-- RETURN  -->
+			<a href="#/">
+				<button type=button class="btn btn-primary" >
+					<span class="glyphicon glyphicon-arrow-left" ></span>
+				</button> 
+			</a>	
+				<!-- SUBMIT  -->
+			<input type="submit" class="btn btn-primary pull-right" value="Add Stock" />
+		</fieldset>
+	</form>
+	
+</div>
